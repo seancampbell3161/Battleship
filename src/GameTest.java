@@ -2,9 +2,22 @@ public class GameTest {
 
     public static void main(String[] args) {
         BattleshipGame game = new BattleshipGame();
-        int[] locations = {2,3,4};
+        GameHelper help = new GameHelper();
+        int numOfGuesses = 0;
+        int randomNum = (int) (Math.random() * 5);
+        int[] locations = {randomNum, randomNum+1, randomNum+2};
+
         game.setLocationCells(locations);
-        String userGuess = "2";
-        String result = game.checkYourself(userGuess);
+        boolean isAlive = true;
+
+        while(isAlive) {
+            String guess = help.getUserInput("enter a number");
+            String result = game.checkYourself(guess);
+            numOfGuesses++;
+            if(result.equals("kill")) {
+                isAlive = false;
+                System.out.println("You took " + numOfGuesses + " guesses");
+            }
+        }
     }
 }
