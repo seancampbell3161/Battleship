@@ -10,7 +10,7 @@ public class GameTest {
         BattleshipGame ship1 = new BattleshipGame();
         ship1.setName("Red October");
         BattleshipGame ship2 = new BattleshipGame();
-        ship2.setName("The Black Pearl")
+        ship2.setName("The Black Pearl");
         BattleshipGame ship3 = new BattleshipGame();
         ship3.setName("Davey Jones");
         shipList.add(ship1);
@@ -21,8 +21,8 @@ public class GameTest {
         System.out.println("Red October, The Black Pearl, and Davey Jones");
         System.out.println("Try to sink them all in the fewest number of guesses");
 
-        for(BattleshipGame ship : shipList) {
-            ArrayList<String> newLocation = helper.placeShip();
+        for(BattleshipGame shipToSet : shipList) {
+            ArrayList<String> newLocation = helper.placeShip(3);
             shipToSet.setLocationCells(newLocation);
         }
 

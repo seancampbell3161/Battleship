@@ -5,7 +5,7 @@ public class BattleshipGame {
     private ArrayList<String> locationCells;
     private String name;
 
-    public void setLocationCells(ArrayList<Integer> loc) {
+    public void setLocationCells(ArrayList<String> loc) {
         locationCells = loc;
     }
     public void setName(String name) {this.name = name;}
